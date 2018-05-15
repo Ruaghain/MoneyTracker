@@ -1,0 +1,62 @@
+@information-colour: #00529B;
+@information-background-colour: #BDE5F8;
+
+@success-colour: #4F8A10;
+@success-background-colour: #DFF2BF;
+
+@warning-colour: #9F6000;
+@warning-background-colour: #FEEFB3;
+
+@error-colour: #D8000C;
+@error-background-colour: #FFBABA;
+
+#mny-notification-modal {
+  display: block;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 55px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+#close {
+  float: right;
+  &:hover {
+    float: right;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.information, .success, .warning, .error {
+  border: 1px solid;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.information {
+  color: @information-colour;
+  background-color: @information-background-colour;
+  background-image: url('images/info.png');
+}
+
+.success {
+  color: @success-colour;
+  background-color: @success-background-colour;
+  background-image: url('images/success.png');
+}
+
+.warning {
+  color: @warning-colour;
+  background-color: @warning-background-colour;
+  background-image: url('images/warning.png');
+}
+
+.error {
+  color: @error-colour;
+  background-color: @error-background-colour;
+  background-image: url('images/error.png');
+}

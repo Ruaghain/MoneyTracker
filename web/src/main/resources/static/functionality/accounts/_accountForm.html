@@ -1,0 +1,37 @@
+<form id="accountForm" name="accountForm" role="form" autocomplete="off">
+    <div class="form-group">
+        <label id="lblAccountName" class="control-label" for="txtAccountName">Account name:</label>
+        <input id="txtAccountName" name="txtAccountName" class="form-control" type="text" required
+               ng-model="accountController.account.name"/>
+    </div>
+    <div class="form-group">
+        <label id="lblAccountNumber" class="control-label" for="txtAccountNumber">Account Number:</label>
+        <input id="txtAccountNumber" name="txtAccountNumber" class="form-control" type="text" required
+               ng-model="accountController.account.number"/>
+    </div>
+    <div class="form-group">
+        <label id="lblAccountType" class="control-label">Account Type:</label>
+        <custom-lookup ng-model="accountController.account.type" lookup-value-field="id" lookup-text-field="name"
+                       lookup-datasource="accountController.searchAccountTypes"></custom-lookup>
+    </div>
+    <div class="form-group">
+        <label id="lblOpeningBalance" class="control-label" for="txtOpeningBalance">Opening Balance:</label>
+        <input id="txtOpeningBalance" name="txtOpeningBalance" class="form-control" type="text" required
+               ng-model="accountController.account.openingBalance"/>
+    </div>
+    <div class="form-group">
+        <label id="lblBalance" class="control-label" for="txtBalance">Balance:</label>
+        <input id="txtBalance" name="txtBalance" class="form-control" type="text" required
+               ng-model="accountController.account.balance"/>
+    </div>
+    <div class="form-group">
+        <label id="lblOpeningDate" class="control-label" for="txtOpeningDate">Opening Date:</label>
+        <input id="txtOpeningDate" name="txtOpeningDate" class="form-control" type="date" required
+               ng-model="accountController.account.openingDate"/>
+    </div>
+    <div class="form-group">
+        <label id="lblCurrency" class="control-label">Currency:</label>
+        <custom-lookup ng-model="accountController.account.currency" lookup-value-field="id" lookup-text-field="name"
+                       lookup-datasource="accountController.searchCurrency"></custom-lookup>
+    </div>
+</form>

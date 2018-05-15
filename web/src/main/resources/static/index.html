@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" ng-app="moneyApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Money Tracker</title>
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="css/MoneyTracker.css">
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendors/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="vendors/angular-lookup-directive/dist/css/angular-lookup-directive.css">
+
+</head>
+<body>
+<div ng-controller="AuthController">
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#moneyNavigationBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Atlantic Money</a>
+            </div>
+            <div class="collapse navbar-collapse" id="moneyNavigationBar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a ui-sref="account.list"><span> Accounts </span></a>
+                        <!--This will contain a screen with all of the accounts. Banking, Credit, Investment and Mortgage-->
+                        <!-- The dropdown will contain all of the favourite (most used) accounts.-->
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Administration <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a ui-sref="user.list"> Users </a></li>
+                            <li><a ui-sref="currency.list"> Currency </a></li>
+                            <li><a ui-sref="accountType.list"> Account Types </a></li>
+                            <li><a ui-sref="dataUploads"> Data Uploads </a></li>
+                        </ul>
+                        <!--This will contain a screen with a link to a list of all the users, or data upload. -->
+                    </li>
+                    <!--<li ng-show="!authController.isAuthenticated()">-->
+                    <!--<a href="#/users"><span class="glyphicon glyphicon-user"> Sign Up</span></a>-->
+                    <!--</li>-->
+                    <!--<li ng-show="!authController.isAuthenticated()">-->
+                    <!--<a href="#/login"><span class="glyphicon glyphicon-log-in"> Login</span></a>-->
+                    <!--</li>-->
+                    <!--<li ng-show="authController.isAuthenticated()">-->
+                    <!--<a href="#" ng-click="authController.logout()"><span-->
+                    <!--class="glyphicon glyphicon-log-out"> Logout </span></a>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <mny-notification></mny-notification>
+    <div ui-view class="container">
+    </div>
+</div>
+
+<!--THE SCRIPT TAGS GET AUTO-GENERATED FROM KARMA-->
+<!-- bower:js -->
+<script src="vendors/jquery/dist/jquery.js"></script>
+<script src="vendors/angularjs/angular.js"></script>
+<script src="vendors/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="vendors/ngstorage/ngStorage.js"></script>
+<script src="vendors/underscore/underscore.js"></script>
+<script src="vendors/fast-sha256/sha256.js"></script>
+<script src="vendors/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="vendors/angular-lookup-directive/dist/js/angular-lookup-directive.min.js"></script>
+<!-- endbower -->
+
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="vendors/bootstrap/dist/js/npm.js"></script>
+
+<script src="js/MoneyTracker.js"></script>
+
+</body>
+
+</html>

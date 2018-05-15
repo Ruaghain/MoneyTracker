@@ -1,0 +1,50 @@
+<form id="dataUploadForm" name="dataUploadForm" role="form" autocomplete="off" method="post"
+      ng-init="dataUploadController.refresh()">
+
+    <div class="form-group">
+        <label id="lblDescription" class="control-label" for="txtDescription">Description:</label>
+        <input id="txtDescription" name="txtDescription" class="form-control" type="text"
+               ng-model="userController.user.firstName"/>
+    </div>
+
+    <div class="form-group">
+        <label id="lblEntity" class="control-label" for="drpEntity">Entity to Upload to:</label>
+        <select id="drpEntity" name="drpEntity" class="form-control"
+                ng-options="entity.name for entity in dataUploadController.listOfEntities"
+                ng-model="dataUploadController.selectedEntity"
+                ng-change="dataUploadController.getListOfFieldsForEntity()"></select>
+    </div>
+
+    <div class="form-group">
+        <mny-file-upload/>
+    </div>
+
+
+    <div class="form-group">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Database Field Name</th>
+                <th>Corresponding File Heading</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="field in dataUploadController.listOfFieldsForEntity">
+                <td>{{field.name}}</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-group">
+			<span>
+				<button ng-disabled="dataUploadForm.$invalid" id="btnSave" name="btnSave"
+                        ng-click="dataUploadController.save()"
+                        class="btn btn-success" type="submit">Save
+                </button>
+				<button id="btnCancel" name="btnCancel" ng-click="dataUploadController.cancel()" class="btn btn-danger">
+                    Cancel
+                </button>
+			</span>
+    </div>
+</form>
+

@@ -1,0 +1,14 @@
+<form id="accountTypeAddForm" name="accountTypeAddForm" role="form" autocomplete="off" ng-submit="addAccountType()">
+    <div ng-include="'functionality/accountType/_accountTypeForm.html'"></div>
+    <div class="btn-group">
+		<span>
+			<button ng-disabled="accountTypeAddForm.$invalid" id="btnSave" name="btnSave"
+                    ng-click="accountTypeController.addAccountType()"
+                    class="btn btn-success" type="submit">Save
+            </button>
+    		<button id="btnCancel" name="btnCancel" ng-click="accountTypeController.cancel()" class="btn btn-danger">
+                Cancel
+            </button>
+		</span>
+    </div>
+</form>

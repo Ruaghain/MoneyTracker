@@ -1,0 +1,29 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+  context-path: ""
+
+security:
+  basic.realm: "MoneyTrack Basic Authroisation Realm"
+
+spring:
+  application.name: MoneyTracker
+  http:
+#    encoding.charset: UTF=8
+    encoding.enabled: true
+  datasource:
+      driverClassName: net.sourceforge.jtds.jdbc.Driver
+      url: jdbc:jtds:sqlserver://localhost:1433/MoneyTrak
+      username: sa
+      password: Passw0rd
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: true
+      hibernate.generate_statistics: true

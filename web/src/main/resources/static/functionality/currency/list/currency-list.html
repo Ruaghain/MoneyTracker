@@ -1,0 +1,33 @@
+<form id="currencyListForm" name="currencyListForm" role="form" autocomplete="off">
+    <div class="form-group">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ISO</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="currency in currencyController.currencies">
+                <td>{{currency.iso}}</td>
+                <td>{{currency.name}}</td>
+                <td>
+                    <a class="btn btn-info" ui-sref="currency.edit({id:currency.id})">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" ng-click="currencyController.remove(currency.id)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-group">
+		<span>
+			<button id="btnNewCurrency" name="btnNewCurrency" ui-sref="currency.new"
+                    class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span> New Currency
+            </button>
+		</span>
+    </div>
+</form>

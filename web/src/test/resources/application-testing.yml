@@ -1,0 +1,29 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+  context-path: ""
+
+spring:
+  application.name: MoneyTracker
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:~/moneyTrak
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+      hibernate.cache.use_second_level_cache: true
+      hibernate.cache.use_query_cache: true
+      hibernate.generate_statistics: true
+
+
+#spring:
+#  batch:
+#    job.enabled: true
+#    job.names: "Names"

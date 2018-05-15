@@ -1,0 +1,12 @@
+<form id="currencyForm" name="currencyForm" role="form" autocomplete="off">
+    <div class="form-group">
+        <label id="lblCurrencyISO" class="control-label" for="txtCurrencyISO">Currency ISO:</label>
+        <input id="txtCurrencyISO" name="txtCurrencyISO" class="form-control" type="text" required
+               ng-model="currencyController.currency.iso"/>
+    </div>
+    <div class="form-group">
+        <label id="lblCurrencyName" class="control-label" for="txtCurrencyName">Currency Name:</label>
+        <input id="txtCurrencyName" name="txtCurrencyName" class="form-control" type="text" required
+               ng-model="currencyController.currency.name"/>
+    </div>
+</form>

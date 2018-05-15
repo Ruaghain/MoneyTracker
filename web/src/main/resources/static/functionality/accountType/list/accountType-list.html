@@ -1,0 +1,31 @@
+<form id="accountTypeListForm" name="accountTypeListForm" role="form" autocomplete="off">
+    <div class="form-group">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="accountType in accountTypeController.accountTypes">
+                <td>{{accountType.name}}</td>
+                <td>
+                    <a class="btn btn-info" ui-sref="accountType.edit({id:accountType.id})">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <a class="btn btn-danger" ng-click="accountTypeController.remove(id)">
+                        <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="btn-group">
+		<span>
+			<button id="btnNewAccountType" name="btnNewAccountType" ui-sref="accountType.new"
+                    class="btn btn-success">
+                <span class="glyphicon glyphicon-plus"></span> New Account Type
+            </button>
+		</span>
+    </div>
+</form>

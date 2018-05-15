@@ -1,0 +1,75 @@
+<form id="userAddForm" name="userAddForm" role="form" autocomplete="off" ng-submit="addUser()">
+    <div class="form-group"
+         ng-class="{ 'has-error has-feedback': userAddForm.txtUserName.$invalid && userAddForm.txtUserName.$dirty,
+          'has-success has-feedback' : userAddForm.txtUserName.$valid && userAddForm.txtUserName.$dirty }">
+        <label id="lblUserName" class="control-label" for="txtUserName">User name:</label>
+        <input id="txtUserName" name="txtUserName" class="form-control" type="text" required
+               ng-model="userController.user.userName" mny-unique-username/>
+        <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': userAddForm.txtUserName.$invalid && userAddForm.txtUserName.$dirty,
+        'glyphicon glyphicon-ok form-control-feedback' : userAddForm.txtUserName.$valid && userAddForm.txtUserName.$dirty}"></span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-error has-feedback': userAddForm.txtUserConfirmPassword.$invalid && userAddForm.txtUserConfirmPassword.$dirty,
+          'has-success has-feedback' : userAddForm.txtUserConfirmPassword.$valid && userAddForm.txtUserConfirmPassword.$dirty }">
+        <label id="lblPassword" class="control-label" for="txtUserPassword">Password:</label>
+        <input id="txtUserPassword" name="txtUserPassword" class="form-control" type="password" required
+               ng-model="userController.user.password"/>
+        <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': userAddForm.txtUserConfirmPassword.$invalid && userAddForm.txtUserConfirmPassword.$dirty,
+        'glyphicon glyphicon-ok form-control-feedback' : userAddForm.txtUserConfirmPassword.$valid && userAddForm.txtUserConfirmPassword.$dirty}"></span>
+    </div>
+    <div class="form-group"
+         ng-class="{ 'has-error has-feedback': userAddForm.txtUserConfirmPassword.$invalid && userAddForm.txtUserConfirmPassword.$dirty,
+          'has-success has-feedback' : userAddForm.txtUserConfirmPassword.$valid && userAddForm.txtUserConfirmPassword.$dirty }">
+        <label id="lblConfirmPassword" class="control-label" for="txtUserConfirmPassword">Confirm Password:</label>
+        <input id="txtUserConfirmPassword" name="txtUserConfirmPassword" class="form-control" type="password" required
+               ng-model="userController.user.confirmPassword"
+               mny-compare-password="userController.user.password"/>
+        <span ng-class="{'glyphicon glyphicon-remove form-control-feedback': userForm.txtUserConfirmPassword.$invalid && userForm.txtUserConfirmPassword.$dirty,
+        'glyphicon glyphicon-ok form-control-feedback' : userAddForm.txtUserConfirmPassword.$valid && userAddForm.txtUserConfirmPassword.$dirty}"></span>
+    </div>
+
+    <div ng-include="'functionality/users/_form.html'"></div>
+
+    <div class="form-group">
+        <label id="lblAddress1" class="control-label" for="txtUserAddress1">Address 1:</label>
+        <input id="txtUserAddress1" name="txtUserAddress1" class="form-control" type="text"
+               ng-model="userController.user.address1"/>
+    </div>
+    <div class="form-group">
+        <label id="lblAddress2" class="control-label" for="txtUserAddress2">Address 2:</label>
+        <input id="txtUserAddress2" name="txtUserAddress2" class="form-control" type="text"
+               ng-model="userController.user.address2"/>
+    </div>
+    <div class="form-group">
+        <label id="lblAddress3" class="control-label" for="txtUserAddress3">Address 3:</label>
+        <input id="txtUserAddress3" name="txtUserAddress3" class="form-control" type="text"
+               ng-model="userController.user.address3"/>
+    </div>
+    <div class="form-group">
+        <label id="lblAddress4" class="control-label" for="txtUserAddress4">Address 4:</label>
+        <input id="txtUserAddress4" name="txtUserAddress4" class="form-control" type="text"
+               ng-model="userController.user.address4"/>
+    </div>
+    <div class="form-group">
+        <label id="lblCity" class="control-label" for="txtUserCity">City:</label>
+        <input id="txtUserCity" name="txtUserCity" class="form-control" type="text"
+               ng-model="userController.user.city"/>
+    </div>
+    <div>
+        <label id="lblCounty" class="control-label" for="txtUserCounty">County:</label>
+        <input id="txtUserCounty" name="txtUserCounty" class="form-control" type="text"
+               ng-model="userController.user.county"/>
+    </div>
+
+    <div class="btn-group">
+			<span>
+				<button ng-disabled="userAddForm.$invalid" id="btnSave" name="btnSave"
+                        ng-click="userController.addUser()"
+                        class="btn btn-success" type="submit">Save
+                </button>
+				<button id="btnCancel" name="btnCancel" ng-click="userController.cancel()" class="btn btn-danger">
+                    Cancel
+                </button>
+			</span>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+#mny-notification-modal {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 55px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#close {
+    float: right;
+}
+
+#close:hover {
+    float: right;
+    color: #fff;
+    cursor: pointer;
+}
+
+.information, .success, .warning, .error {
+    border: 1px solid;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.information {
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('images/info.png');
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('images/success.png');
+}
+
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('images\warning.png');
+}
+
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('images/error.png');
+}

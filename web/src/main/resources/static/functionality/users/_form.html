@@ -1,0 +1,17 @@
+<form id="userForm" name="userForm" role="form" autocomplete="off">
+    <div class="form-group">
+        <label id="lblFirstName" class="control-label" for="txtUserFirstName">First name:</label>
+        <input id="txtUserFirstName" name="txtUserFirstName" class="form-control" type="text"
+               ng-model="userController.user.firstName"/>
+    </div>
+    <div class="form-group">
+        <label id="lblLastName" class="control-label" for="txtUserLastName">Last name:</label>
+        <input id="txtUserLastName" name="txtUserLastName" class="form-control" type="text"
+               ng-model="userController.user.lastName"/>
+    </div>
+    <div class="form-group">
+        <label id="lblDateOfBirth" class="control-label" for="txtUserDateOfBirth">Date of Birth:</label>
+        <input id="txtUserDateOfBirth" name="txtUserDateOfBirth" class="form-control" type="date"
+               ng-model="userController.user.dateOfBirth"/>
+    </div>
+</form>

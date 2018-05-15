@@ -1,0 +1,14 @@
+<form id="accountEditForm" name="accountEditForm" role="form" autocomplete="off"
+      ng-submit="accountController.update()">
+    <div ng-include="'functionality/accounts/_accountForm.html'"></div>
+    <div class="btn-group">
+		<span>
+			<button id="btnSave" name="btnSave" ng-click="accountController.update()"
+                    class="btn btn-success" type="submit">Save
+            </button>
+    		<button id="btnCancel" name="btnCancel" ng-click="accountController.cancel()" class="btn btn-danger">
+                Cancel
+            </button>
+		</span>
+    </div>
+</form>

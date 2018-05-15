@@ -1,0 +1,14 @@
+<form id="currencyEditForm" name="currencyEditForm" role="form" autocomplete="off"
+      ng-submit="currencyController.update()">
+    <div ng-include="'functionality/currency/_currencyForm.html'"></div>
+    <div class="btn-group">
+		<span>
+			<button id="btnSave" name="btnSave" ng-click="currencyController.update()"
+                    class="btn btn-success" type="submit">Save
+            </button>
+    		<button id="btnCancel" name="btnCancel" ng-click="currencyController.cancel()" class="btn btn-danger">
+                Cancel
+            </button>
+		</span>
+    </div>
+</form>

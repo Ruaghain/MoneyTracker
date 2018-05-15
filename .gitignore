@@ -1,0 +1,15 @@
+!.gitkeep
+*.iml
+.idea/
+*.ipr
+*.iws
+*.ids
+*.log
+/out/
+.idea_modules/
+atlassian-ide-plugin.xml
+node_modules/
+karma_html
+web/src/main/resources/static/vendors
+logs/
+tmp

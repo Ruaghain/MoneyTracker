@@ -1,0 +1,19 @@
+<form id="userEditForm" name="userEditForm" role="form" autocomplete="off">
+    <div class="form-group">
+        <label id="lblUserName" class="control-label" for="txtUserName">User name:</label>
+        <input id="txtUserName" name="txtUserName" class="form-control" type="text" required ng-disabled="true"
+               ng-model="userController.user.userName"/>
+    </div>
+    <div ng-include="'functionality/users/_form.html'"></div>
+    <div class="btn-group">
+		<span>
+			<button ng-disabled="userEditForm.$invalid" id="btnSave" name="btnSave"
+                    ng-click="userController.update()"
+                    class="btn btn-success" type="submit">Save
+            </button>
+			<button id="btnCancel" name="btnCancel" ng-click="userController.cancel()" class="btn btn-danger">
+                Cancel
+            </button>
+		</span>
+    </div>
+</form>
